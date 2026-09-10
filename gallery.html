@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Dreamy Cake House</title>
+  <meta name="description" content="Browse the Dreamy Cake House cake gallery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/variables.css">
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="pages/gallery/gallery.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Gallery</h1>
+      <p>A look at our custom, legacy and modern cakes. Tap a cake for details.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="gallery-grid" id="gallery-grid">
+        <p class="empty-state">Loading gallery…</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="shared/utils.js"></script>
+  <script src="shared/header.js"></script>
+  <script src="shared/footer.js"></script>
+  <script src="pages/gallery/gallery.js"></script>
+  <script>
+    renderHeader('gallery');
+    renderFooter();
+  </script>
+</body>
+</html>

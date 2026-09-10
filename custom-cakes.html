@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Cakes | Dreamy Cake House</title>
+  <meta name="description" content="Request a fully custom cake from Dreamy Cake House — tell us the occasion, size, flavor and design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/variables.css">
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="pages/custom-cakes/custom-cakes.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Custom Cakes</h1>
+      <p>Tell us about your occasion and vision, and we'll design a cake around it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="form-wrap">
+        <p class="lead-time-note" id="lead-time-note">Loading lead-time details…</p>
+
+        <form id="custom-cake-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="occasion">Occasion</label>
+              <select id="occasion" required>
+                <option value="" disabled selected>Loading…</option>
+              </select>
+              <div class="error-text">This field is required.</div>
+            </div>
+            <div class="field">
+              <label for="size">Size</label>
+              <select id="size" required>
+                <option value="" disabled selected>Loading…</option>
+              </select>
+              <div class="error-text">This field is required.</div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="flavor">Flavor</label>
+              <select id="flavor" required>
+                <option value="" disabled selected>Loading…</option>
+              </select>
+              <div class="error-text">This field is required.</div>
+            </div>
+            <div class="field">
+              <label for="budget">Budget Range</label>
+              <select id="budget" required>
+                <option value="" disabled selected>Loading…</option>
+              </select>
+              <div class="error-text">This field is required.</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="delivery-date">Delivery Date</label>
+            <input type="date" id="delivery-date" required>
+            <div class="error-text">Please allow enough notice.</div>
+          </div>
+
+          <div class="field">
+            <label for="design-notes">Design Notes</label>
+            <textarea id="design-notes" rows="4" placeholder="Describe colors, theme, decorations, message on cake, dietary needs, etc."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="design-images">Reference Images (optional)</label>
+            <input type="file" id="design-images" accept="image/*" multiple>
+            <div class="hint">Up to 4 images. Helps us match your vision.</div>
+            <div class="upload-preview" id="upload-preview"></div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="Jane Doe">
+              <div class="error-text">This field is required.</div>
+            </div>
+            <div class="field">
+              <label for="contact">Phone or Email</label>
+              <input type="text" id="contact" required placeholder="you@example.com">
+              <div class="error-text">This field is required.</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+          <div class="form-status" id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="shared/utils.js"></script>
+  <script src="shared/header.js"></script>
+  <script src="shared/footer.js"></script>
+  <script src="pages/custom-cakes/custom-cakes.js"></script>
+  <script>
+    renderHeader('custom');
+    renderFooter();
+  </script>
+</body>
+</html>

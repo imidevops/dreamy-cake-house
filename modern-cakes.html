@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Cakes | Dreamy Cake House</title>
+  <meta name="description" content="Trending modern cake designs from Dreamy Cake House — filter by occasion.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/variables.css">
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="pages/modern-cakes/modern-cakes.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Modern Cakes</h1>
+      <p>Trending designs — drip cakes, mirror glaze, geode art and more. Filter by occasion to find the right style.</p>
+    </div>
+  </section>
+
+  <section class="catalog-section">
+    <div class="container">
+      <div class="filter-bar" id="filter-bar"></div>
+      <div class="cake-grid" id="catalog-grid">
+        <p class="empty-state">Loading cakes…</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="shared/utils.js"></script>
+  <script src="shared/header.js"></script>
+  <script src="shared/footer.js"></script>
+  <script src="pages/modern-cakes/modern-cakes.js"></script>
+  <script>
+    renderHeader('modern');
+    renderFooter();
+  </script>
+</body>
+</html>

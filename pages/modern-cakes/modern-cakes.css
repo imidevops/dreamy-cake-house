@@ -1,0 +1,36 @@
+/* Modern Cakes catalog page — catalog grid reuses .cake-grid/.cake-card */
+
+.page-hero {
+  background: var(--color-bg-alt);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+.page-hero h1 { margin-bottom: var(--space-sm); }
+.page-hero p { max-width: 560px; margin: 0 auto; }
+
+.catalog-section { padding-top: var(--space-xl); }
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+.filter-chip {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.filter-chip:hover { border-color: var(--color-primary); }
+.filter-chip.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}

@@ -1,0 +1,41 @@
+/* Gallery page — a big masonry-ish grid of cake thumbnails across all categories */
+
+.page-hero {
+  background: var(--color-bg-alt);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+.page-hero h1 { margin-bottom: var(--space-sm); }
+.page-hero p { max-width: 560px; margin: 0 auto; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition);
+}
+.gallery-item:hover { transform: scale(1.03); }
+
+.gallery-item .gallery-caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(58, 42, 42, 0.72);
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 0.4rem 0.6rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.gallery-item:hover .gallery-caption { opacity: 1; }

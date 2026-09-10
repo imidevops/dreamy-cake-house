@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Base reset, typography, and shared components (header, footer, buttons,
+   cards, badges). Loaded on every page after variables.css.
+   Page-specific styles live in /pages/<feature>/*.css and should only add
+   to what's here, not redefine it.
+   ========================================================================== */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text);
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
+h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 var(--space-md); color: var(--color-text-light); }
+
+a { color: var(--color-primary-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+section { padding: var(--space-2xl) 0; }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  text-decoration: none;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-md); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+.btn-outline:hover { background: var(--color-primary-light); }
+
+/* ---- Site header ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 248, 243, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+.site-header .logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+.site-header .logo span { color: var(--color-accent); }
+
+.site-nav { display: flex; align-items: center; gap: var(--space-lg); }
+.site-nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+@media (max-width: 780px) {
+  .nav-toggle { display: block; }
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-md);
+    display: none;
+  }
+  .site-nav.open { display: flex; }
+  .site-nav ul { flex-direction: column; gap: var(--space-sm); width: 100%; }
+}
+
+/* ---- Site footer ---- */
+.site-footer {
+  background: var(--color-text);
+  color: #efe3dc;
+  padding: var(--space-2xl) 0 var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+.site-footer a { color: #f3d9c4; }
+.site-footer h4 { color: #fff; font-family: var(--font-body); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #cbb9ae;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: var(--space-md);
+}
+
+/* ---- Cards / catalog grid ---- */
+.cake-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-lg);
+}
+
+.cake-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.cake-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.cake-card .cake-thumb {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.cake-card .cake-body { padding: var(--space-md); flex: 1; display: flex; flex-direction: column; }
+.cake-card h3 { margin-bottom: 0.2rem; }
+.cake-card .cake-flavor { font-size: 0.85rem; color: var(--color-accent); font-weight: 600; margin-bottom: var(--space-xs); }
+.cake-card .cake-desc { font-size: 0.9rem; flex: 1; }
+.cake-card .cake-price { font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-primary-dark); margin-bottom: var(--space-sm); }
+
+/* ---- Badges (occasion tags) ---- */
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: var(--color-bg-alt);
+  color: var(--color-primary-dark);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  margin: 0 0.3rem 0.3rem 0;
+}
+
+/* ---- Section heading helper ---- */
+.section-heading { text-align: center; max-width: 620px; margin: 0 auto var(--space-xl); }
+.section-heading p { margin-bottom: 0; }
+
+/* ---- Form elements (shared look across contact/custom-cakes forms) ---- */
+.field { margin-bottom: var(--space-md); }
+.field label { display: block; font-weight: 600; margin-bottom: 0.35rem; font-size: 0.92rem; }
+.field .hint { font-size: 0.8rem; color: var(--color-text-light); margin-top: 0.3rem; }
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+.field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); }
+
+.form-status {
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-md);
+  display: none;
+}
+.form-status.success { display: block; background: #e5f3ec; color: var(--color-success); }
+.form-status.error { display: block; background: #fbe8e6; color: var(--color-error); }
+
+/* ---- Utility ---- */
+.bg-alt { background: var(--color-bg-alt); }
+.text-center { text-align: center; }
+.mt-lg { margin-top: var(--space-lg); }
+.empty-state { text-align: center; padding: var(--space-2xl) 0; color: var(--color-text-light); }

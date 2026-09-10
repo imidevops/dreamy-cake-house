@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamy Cake House | Custom, Traditional &amp; Modern Cakes</title>
+  <meta name="description" content="Dreamy Cake House bakes custom-designed cakes, classic traditional recipes, and trending modern cake designs for every celebration.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/variables.css">
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="pages/home/home.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <div class="eyebrow">Baked fresh, designed for you</div>
+        <h1>Cakes made to remember the moment.</h1>
+        <p>From fully custom designs to timeless family recipes and today's trending styles — Dreamy Cake House bakes every order by hand.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="custom-cakes.html">Request a Custom Cake</a>
+          <a class="btn btn-outline" href="gallery.html">View Gallery</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">🎂</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <h2>Three ways to celebrate</h2>
+        <p>Whatever you're picturing, we have a path to it.</p>
+      </div>
+      <div class="categories-grid">
+        <a class="category-card" href="custom-cakes.html">
+          <div class="icon">✏️</div>
+          <h3>Custom Cakes</h3>
+          <p>Tell us your vision — occasion, size, flavor, and design — and we'll bring it to life.</p>
+        </a>
+        <a class="category-card" href="legacy-cakes.html">
+          <div class="icon">📖</div>
+          <h3>Legacy Cakes</h3>
+          <p>Classic, time-tested recipes made the traditional way.</p>
+        </a>
+        <a class="category-card" href="modern-cakes.html">
+          <div class="icon">✨</div>
+          <h3>Modern Cakes</h3>
+          <p>Trending designs — drip cakes, mirror glaze, geode, and more.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-alt">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Customer favorites</h2>
+        <p>A few of the cakes people keep coming back for.</p>
+      </div>
+      <div class="cake-grid" id="featured-grid">
+        <p class="empty-state">Loading cakes…</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <h2>What our customers say</h2>
+      </div>
+      <div class="testimonial-grid" id="testimonial-grid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Have an occasion coming up?</h2>
+        <p>Let's design a cake around it.</p>
+        <a class="btn btn-outline" href="custom-cakes.html">Start Your Request</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="shared/utils.js"></script>
+  <script src="shared/header.js"></script>
+  <script src="shared/footer.js"></script>
+  <script src="pages/home/home.js"></script>
+  <script>
+    renderHeader('home');
+    renderFooter();
+  </script>
+</body>
+</html>

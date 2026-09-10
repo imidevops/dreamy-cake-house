@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Dreamy Cake House</title>
+  <meta name="description" content="Get in touch with Dreamy Cake House — address, phone, WhatsApp and map.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/variables.css">
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="pages/contact/contact.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Questions about an order, or want to swing by the bakery? Reach out any way that's easiest.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <ul class="contact-list">
+            <li><span class="icon">📍</span><span id="contact-address">Loading…</span></li>
+            <li><span class="icon">📞</span><a id="contact-phone" href="#"></a></li>
+            <li><span class="icon">✉️</span><a id="contact-email" href="#"></a></li>
+            <li><span class="icon">💬</span><a id="contact-whatsapp" href="#" target="_blank" rel="noopener">Message us on WhatsApp</a></li>
+          </ul>
+          <a class="btn btn-primary" id="contact-whatsapp-btn" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+        <div class="map-embed">
+          <iframe id="contact-map" loading="lazy" title="Dreamy Cake House location"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="shared/utils.js"></script>
+  <script src="shared/header.js"></script>
+  <script src="shared/footer.js"></script>
+  <script src="pages/contact/contact.js"></script>
+  <script>
+    renderHeader('contact');
+    renderFooter();
+  </script>
+</body>
+</html>

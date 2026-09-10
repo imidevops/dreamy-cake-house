@@ -1,0 +1,22 @@
+{
+  "occasions": [
+    "Birthday", "Wedding", "Anniversary", "Baby Shower", "Graduation",
+    "Corporate Event", "Christmas", "Other"
+  ],
+  "sizes": [
+    { "value": "6in", "label": "6\" round (serves 8-10)" },
+    { "value": "8in", "label": "8\" round (serves 15-20)" },
+    { "value": "10in", "label": "10\" round (serves 25-30)" },
+    { "value": "tiered-2", "label": "2-tier (serves 35-45)" },
+    { "value": "tiered-3", "label": "3-tier (serves 60-80)" }
+  ],
+  "flavors": [
+    "Vanilla Bean", "Chocolate Fudge", "Red Velvet", "Lemon", "Carrot",
+    "Funfetti", "Salted Caramel", "Matcha", "Coffee", "Other (describe below)"
+  ],
+  "budgetRanges": [
+    "Under $50", "$50 - $100", "$100 - $200", "$200 - $400", "$400+"
+  ],
+  "leadTimeDays": 7,
+  "leadTimeNote": "Custom cakes need at least 7 days' notice; tiered/wedding cakes need 3+ weeks."
+}

@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Design tokens for Dreamy Cake House.
+   Every page/feature stylesheet should rely on these variables instead of
+   hardcoding colors/fonts, so a palette or font change happens in one place.
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-bg: #fff8f3;
+  --color-bg-alt: #fdeee5;
+  --color-surface: #ffffff;
+  --color-primary: #d46a86;
+  --color-primary-dark: #b14b68;
+  --color-primary-light: #f3c9d5;
+  --color-accent: #c9976a;
+  --color-accent-light: #e9d3b8;
+  --color-text: #3a2a2a;
+  --color-text-light: #7a6a63;
+  --color-border: #f0ddd0;
+  --color-success: #4b8b6f;
+  --color-error: #c1443a;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Poppins', -apple-system, Segoe UI, sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.4rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 2.4rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Layout */
+  --max-width: 1180px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(58, 42, 42, 0.08);
+  --shadow-md: 0 8px 24px rgba(58, 42, 42, 0.12);
+  --transition: 0.2s ease;
+}

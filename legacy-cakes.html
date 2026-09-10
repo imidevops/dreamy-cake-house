@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Cakes | Dreamy Cake House</title>
+  <meta name="description" content="Classic, traditional cake recipes handmade by Dreamy Cake House.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/variables.css">
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="pages/legacy-cakes/legacy-cakes.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Legacy Cakes</h1>
+      <p>Time-tested, classic recipes baked the traditional way — the flavors people grew up loving.</p>
+    </div>
+  </section>
+
+  <section class="catalog-section">
+    <div class="container">
+      <div class="cake-grid" id="catalog-grid">
+        <p class="empty-state">Loading cakes…</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="shared/utils.js"></script>
+  <script src="shared/header.js"></script>
+  <script src="shared/footer.js"></script>
+  <script src="pages/legacy-cakes/legacy-cakes.js"></script>
+  <script>
+    renderHeader('legacy');
+    renderFooter();
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "modern-drip-cake",
+    "name": "Chocolate Drip Cake",
+    "category": "modern",
+    "price": 65,
+    "currency": "USD",
+    "flavor": "Chocolate Fudge",
+    "description": "Tall naked-style layers with a glossy chocolate drip, fresh macarons, and gold leaf accents — the internet's favorite silhouette.",
+    "occasion": ["birthday"],
+    "featured": true
+  },
+  {
+    "id": "modern-mirror-glaze",
+    "name": "Mirror Glaze Cake",
+    "category": "modern",
+    "price": 78,
+    "currency": "USD",
+    "flavor": "Mango & Passionfruit Mousse",
+    "description": "A show-stopping high-gloss mirror glaze over layered mousse and sponge — as photogenic as it is delicious.",
+    "occasion": ["birthday", "anniversary"],
+    "featured": true
+  },
+  {
+    "id": "modern-pull-apart",
+    "name": "Pull-Apart Cupcake Cake",
+    "category": "modern",
+    "price": 55,
+    "currency": "USD",
+    "flavor": "Vanilla Bean",
+    "description": "Individually frosted cupcakes arranged into one giant cake shape — easy to serve, big on impact for parties.",
+    "occasion": ["birthday", "baby-shower"],
+    "featured": false
+  },
+  {
+    "id": "modern-geode-cake",
+    "name": "Geode Crystal Cake",
+    "category": "modern",
+    "price": 95,
+    "currency": "USD",
+    "flavor": "Funfetti Vanilla",
+    "description": "Edible rock-candy 'crystals' set into a hand-painted geode design — a striking centerpiece for milestone celebrations.",
+    "occasion": ["birthday", "anniversary"],
+    "featured": true
+  },
+  {
+    "id": "modern-nude-floral",
+    "name": "Nude Cake with Fresh Florals",
+    "category": "modern",
+    "price": 88,
+    "currency": "USD",
+    "flavor": "Lemon & Elderflower",
+    "description": "Minimal semi-naked buttercream finish dressed with fresh seasonal flowers — an elegant, trending wedding style.",
+    "occasion": ["wedding", "anniversary"],
+    "featured": false
+  },
+  {
+    "id": "modern-gender-reveal",
+    "name": "Gender Reveal Splash Cake",
+    "category": "modern",
+    "price": 70,
+    "currency": "USD",
+    "flavor": "Vanilla & Strawberry",
+    "description": "A clean white exterior cut open to reveal a burst of pink or blue sponge inside — the ultimate reveal-party showpiece.",
+    "occasion": ["baby-shower"],
+    "featured": false
+  },
+  {
+    "id": "modern-bento-cake",
+    "name": "Mini Bento Cake",
+    "category": "modern",
+    "price": 28,
+    "currency": "USD",
+    "flavor": "Matcha & White Chocolate",
+    "description": "A trending Korean-style 4-inch personal cake in a box, hand-lettered with a custom message.",
+    "occasion": ["birthday"],
+    "featured": true
+  },
+  {
+    "id": "modern-graffiti-cake",
+    "name": "Graffiti Splatter Cake",
+    "category": "modern",
+    "price": 72,
+    "currency": "USD",
+    "flavor": "Cookies & Cream",
+    "description": "Bold buttercream splatter art on a clean white base, for playful, statement-making celebrations.",
+    "occasion": ["birthday"],
+    "featured": false
+  }
+]

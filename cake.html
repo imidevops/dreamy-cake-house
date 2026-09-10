@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake Details | Dreamy Cake House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/variables.css">
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="pages/cake-detail/cake-detail.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="detail-section">
+    <div class="container">
+      <a class="back-link" href="javascript:history.back()">&larr; Back</a>
+
+      <div id="detail-content" class="detail-grid" hidden>
+        <div class="detail-thumb" id="detail-thumb"></div>
+        <div>
+          <h1 id="detail-name"></h1>
+          <div class="detail-flavor" id="detail-flavor"></div>
+          <div class="detail-badges" id="detail-badges"></div>
+          <p id="detail-description"></p>
+          <div class="detail-price" id="detail-price"></div>
+          <div class="detail-actions">
+            <a class="btn btn-primary" id="order-cta" target="_blank" rel="noopener">Order via WhatsApp</a>
+            <a class="btn btn-outline" href="custom-cakes.html">Request a Custom Version</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="detail-not-found" class="empty-state" hidden>
+        <h2>Cake not found</h2>
+        <p>We couldn't find that cake. It may have been removed from the menu.</p>
+        <a class="btn btn-primary" href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="shared/utils.js"></script>
+  <script src="shared/header.js"></script>
+  <script src="shared/footer.js"></script>
+  <script src="pages/cake-detail/cake-detail.js"></script>
+  <script>
+    renderHeader('');
+    renderFooter();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.netlify/
+.serve-out.log
+.serve-err.log
+.gh-login-out.log
+.gh-login-err.log
+.netlify-login-out.log
+.netlify-login-err.log
+node_modules/

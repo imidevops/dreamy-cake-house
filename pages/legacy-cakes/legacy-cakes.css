@@ -1,0 +1,11 @@
+/* Legacy Cakes catalog page — mostly reuses .cake-grid/.cake-card from base.css */
+
+.page-hero {
+  background: var(--color-bg-alt);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+.page-hero h1 { margin-bottom: var(--space-sm); }
+.page-hero p { max-width: 560px; margin: 0 auto; }
+
+.catalog-section { padding-top: var(--space-xl); }
