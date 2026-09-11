@@ -22,26 +22,63 @@
 
   <div class="admin-wrap">
 
-    <!-- Login screen -->
+    <!-- Login screen: shows the one-time setup form, or the password+CAPTCHA
+         login form, depending on whether a vault already exists. -->
     <div id="login-screen">
-      <div class="login-card">
-        <h2>Owner Login</h2>
-        <p>This panel commits changes straight to the site's cake data on GitHub. Paste a GitHub Personal Access Token to continue — it's stored only in this browser and sent only to GitHub.</p>
+
+      <!-- One-time setup: only shown before any admin access has been configured. -->
+      <div class="login-card" id="setup-form-wrap">
+        <h2>Set Up Admin Access</h2>
+        <p>One-time setup. After this, you'll only ever need your password + CAPTCHA to log in — this GitHub token is used once to encrypt-and-store, never shown again.</p>
         <ol>
           <li>Go to <code>github.com/settings/personal-access-tokens/new</code></li>
           <li>Create a <strong>fine-grained token</strong> scoped to only the <code>dreamy-cake-house</code> repository</li>
           <li>Under Repository permissions, set <strong>Contents: Read and write</strong></li>
-          <li>Generate it, copy it, and paste it below</li>
+          <li>Generate it, copy it, and paste it below along with a password you'll remember</li>
         </ol>
-        <form id="login-form">
+        <form id="setup-form">
           <div class="field">
-            <label for="token-input">GitHub Token</label>
-            <input type="password" id="token-input" placeholder="github_pat_..." autocomplete="off" required>
+            <label for="setup-token-input">GitHub Token (one-time)</label>
+            <input type="password" id="setup-token-input" placeholder="github_pat_..." autocomplete="off" required>
           </div>
-          <button type="submit" class="btn btn-primary">Connect</button>
-          <p class="form-status error" id="login-error" style="display:block;background:transparent;color:var(--color-error);padding:0;"></p>
+          <div class="field-row">
+            <div class="field">
+              <label for="setup-password-input">Choose a Password</label>
+              <input type="password" id="setup-password-input" autocomplete="new-password" minlength="8" required>
+            </div>
+            <div class="field">
+              <label for="setup-password-confirm">Confirm Password</label>
+              <input type="password" id="setup-password-confirm" autocomplete="new-password" minlength="8" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="setup-captcha-input">CAPTCHA — <span id="setup-captcha-question"></span></label>
+            <input type="number" id="setup-captcha-input" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Set Up Admin Access</button>
+          <p class="hint" id="setup-error" style="color:var(--color-error);"></p>
         </form>
       </div>
+
+      <!-- Normal login: shown once admin access has already been set up. -->
+      <div class="login-card" id="login-form-wrap" hidden>
+        <h2>Owner Login</h2>
+        <p>Enter your password to continue.</p>
+        <form id="login-form">
+          <div class="field">
+            <label for="login-password-input">Password</label>
+            <input type="password" id="login-password-input" autocomplete="current-password" required>
+          </div>
+          <div class="field">
+            <label for="login-captcha-input">CAPTCHA — <span id="login-captcha-question"></span></label>
+            <input type="number" id="login-captcha-input" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Log In</button>
+          <p class="hint" id="login-error" style="color:var(--color-error);"></p>
+        </form>
+        <p class="hint mt-lg">Forgot your password, or rotating your GitHub token? <button type="button" id="reset-setup-btn" class="link-btn">Reset admin access</button></p>
+      </div>
+
     </div>
 
     <!-- Dashboard -->
@@ -102,6 +139,16 @@
               </div>
             </div>
             <div class="hint">Leave a tier blank if that size isn't offered for this cake.</div>
+          </div>
+
+          <div class="field">
+            <label for="cake-image">Photo (optional)</label>
+            <input type="file" id="cake-image" accept="image/*">
+            <div class="hint">JPG/PNG/WebP. Replaces the placeholder icon everywhere on the site.</div>
+            <div id="image-preview-wrap" hidden>
+              <img id="image-preview" alt="Cake photo preview" class="image-preview">
+              <button type="button" id="remove-image-btn" class="btn btn-outline">Remove Photo</button>
+            </div>
           </div>
 
           <div class="field checkbox-field">

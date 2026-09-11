@@ -8,7 +8,7 @@ Common building blocks loaded by every page: design tokens, base styles, header/
 - **base.css** — reset, typography, and shared components used across pages: `.site-header`, `.site-footer`, `.btn`, `.cake-card` / `.cake-grid`, `.badge`, form field styles (`.field`, `.form-status`). Page-specific CSS files should only add to this, not redefine it.
 - **header.js** — `renderHeader(activePage)`. Builds the sticky nav and injects it into `<div id="site-header">`, highlighting the current page's link. Also wires the mobile hamburger toggle.
 - **footer.js** — `renderFooter()`. Injects the footer into `<div id="site-footer">`. Business contact info (phone/address/WhatsApp number) is hardcoded in the `BUSINESS` object at the top of this file — update it there if it changes.
-- **utils.js** — shared helpers used by page scripts: `fetchJSON(path)`, `formatPrice(amount, currency)`, `getQueryParam(name)`, `qs`/`qsa` (querySelector shorthands), `cakeThumbStyle(id)` (deterministic gradient+emoji placeholder since there are no product photos yet), `escapeHTML(str)`.
+- **utils.js** — shared helpers used by page scripts: `fetchJSON(path)`, `formatPrice(amount)`/`formatPriceRange(prices)` (PKR, per-pound tiers — see [/data/NOTES.md](../data/NOTES.md)), `getQueryParam(name)`, `qs`/`qsa` (querySelector shorthands), `cakeThumbStyle(id)` (gradient+emoji placeholder) and `cakeThumbMarkup(cake, pathPrefix)` (renders a cake's real uploaded photo if it has one, else the placeholder — every card/detail/gallery renderer uses this), `escapeHTML(str)`.
 
 ## Load order on every page
 

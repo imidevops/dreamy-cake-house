@@ -14,9 +14,15 @@
  * - getQueryParam(name)    -> value of a URL query param, or null.
  * - qs(selector, root)     -> shorthand for root.querySelector.
  * - qsa(selector, root)    -> shorthand for [...root.querySelectorAll].
- * - cakeThumbStyle(id)     -> deterministic gradient + emoji for a cake
- *                             placeholder thumbnail, keyed by cake id (no
- *                             real product photos in this project yet).
+ * - cakeThumbStyle(id)     -> deterministic gradient + emoji for a cake's
+ *                             placeholder thumbnail (used when it has no
+ *                             uploaded photo).
+ * - cakeThumbMarkup(cake, pathPrefix) -> inner HTML for a cake's thumbnail:
+ *                             an <img> if `cake.image` is set (uploaded via
+ *                             the admin panel), else the placeholder div.
+ *                             `pathPrefix` is prepended to `cake.image`
+ *                             (pages at the site root pass '', /admin/ passes
+ *                             '../' since it's one directory deep).
  * - escapeHTML(str)        -> escapes text before inserting into innerHTML.
  */
 
@@ -78,6 +84,19 @@ function cakeThumbStyle(id) {
   let hash = 0;
   for (let i = 0; i < id.length; i++) hash = (hash * 31 + id.charCodeAt(i)) >>> 0;
   return THUMB_PALETTE[hash % THUMB_PALETTE.length];
+}
+
+/**
+ * Inner HTML for a cake's thumbnail wrapper (.cake-thumb / .detail-thumb /
+ * .gallery-item / admin's .thumb — each just sizes/clips this via CSS).
+ * Real photo if uploaded, otherwise the gradient+emoji placeholder.
+ */
+function cakeThumbMarkup(cake, pathPrefix = '') {
+  if (cake.image) {
+    return `<img src="${pathPrefix}${escapeHTML(cake.image)}" alt="${escapeHTML(cake.name)}" loading="lazy">`;
+  }
+  const thumb = cakeThumbStyle(cake.id);
+  return `<div class="thumb-placeholder" style="background:${thumb.gradient}">${thumb.emoji}</div>`;
 }
 
 function escapeHTML(str) {

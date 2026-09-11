@@ -8,7 +8,7 @@ Catalog grid for Modern/trending Cakes, filterable by occasion. Backs [/modern-c
 - **modern-cakes.js** —
   - `formatOccasion(slug)`: `"baby-shower"` → `"Baby Shower"`.
   - `renderFilterBar(cakes)`: builds an "All" chip plus one chip per unique `occasion` value found in the data.
-  - `renderGrid(cakes)`: renders a given cake list into `#catalog-grid`.
+  - `renderGrid(cakes)`: renders a given cake list into `#catalog-grid`, using `cakeThumbMarkup()` (from [/shared/utils.js](../../shared/utils.js)) for each thumbnail — a real uploaded photo if set, else the placeholder.
   - `applyFilter(occasion)`: filters the in-memory `ALL_CAKES` list and re-renders.
   - `initModernCakesPage()`: loads the data once, then renders the filter bar and full grid. Runs on `DOMContentLoaded`.
 

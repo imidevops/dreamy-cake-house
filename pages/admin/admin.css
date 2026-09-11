@@ -55,8 +55,10 @@ body { background: var(--color-bg-alt); }
 }
 .admin-cake-row .thumb {
   width: 48px; height: 48px; border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
+  overflow: hidden; flex-shrink: 0;
 }
+.admin-cake-row .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.admin-cake-row .thumb .thumb-placeholder { font-size: 1.4rem; }
 .admin-cake-row .info { flex: 1; min-width: 0; }
 .admin-cake-row .info h3 { font-size: 1rem; margin: 0; }
 .admin-cake-row .info .meta { font-size: 0.82rem; color: var(--color-text-light); }
@@ -83,6 +85,21 @@ body { background: var(--color-bg-alt); }
 .checkbox-field { display: flex; align-items: center; gap: 0.5rem; }
 .checkbox-field input { width: auto; }
 .form-actions { display: flex; gap: var(--space-md); margin-top: var(--space-lg); }
+
+#image-preview-wrap { display: flex; align-items: center; gap: var(--space-md); margin-top: var(--space-sm); }
+.image-preview { width: 90px; height: 90px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--color-border); }
+
+/* Plain inline text-button, e.g. "Reset admin access" */
+.link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .admin-toast {
   position: fixed;

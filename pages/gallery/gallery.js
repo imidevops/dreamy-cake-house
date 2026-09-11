@@ -13,10 +13,9 @@
  */
 
 function galleryItemHTML(cake) {
-  const thumb = cakeThumbStyle(cake.id);
   return `
-    <a class="gallery-item" style="background:${thumb.gradient}" href="cake.html?id=${encodeURIComponent(cake.id)}">
-      ${thumb.emoji}
+    <a class="gallery-item" href="cake.html?id=${encodeURIComponent(cake.id)}">
+      ${cakeThumbMarkup(cake)}
       <span class="gallery-caption">${escapeHTML(cake.name)}</span>
     </a>
   `;

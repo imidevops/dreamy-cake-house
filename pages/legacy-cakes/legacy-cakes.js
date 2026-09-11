@@ -10,10 +10,9 @@
  */
 
 function legacyCardHTML(cake) {
-  const thumb = cakeThumbStyle(cake.id);
   return `
     <a class="cake-card" href="cake.html?id=${encodeURIComponent(cake.id)}">
-      <div class="cake-thumb" style="background:${thumb.gradient}">${thumb.emoji}</div>
+      <div class="cake-thumb">${cakeThumbMarkup(cake)}</div>
       <div class="cake-body">
         <h3>${escapeHTML(cake.name)}</h3>
         <div class="cake-flavor">${escapeHTML(cake.flavor)}</div>

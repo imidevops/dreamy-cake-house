@@ -42,9 +42,7 @@ function selectTier(cake, tierKey) {
 }
 
 function renderCake(cake) {
-  const thumb = cakeThumbStyle(cake.id);
-  qs('#detail-thumb').style.background = thumb.gradient;
-  qs('#detail-thumb').textContent = thumb.emoji;
+  qs('#detail-thumb').innerHTML = cakeThumbMarkup(cake);
   qs('#detail-name').textContent = cake.name;
   qs('#detail-flavor').textContent = cake.flavor;
   qs('#detail-description').textContent = cake.description;

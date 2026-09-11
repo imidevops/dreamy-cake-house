@@ -5,7 +5,7 @@ Visual gallery combining every legacy + modern cake into one grid. Backs [/galle
 ## Files
 
 - **gallery.css** — responsive tile grid, hover caption overlay.
-- **gallery.js** — `renderGallery()`: loads both catalogs, renders every cake as a tile linking to `cake.html?id=<id>`. Runs on `DOMContentLoaded`.
+- **gallery.js** — `renderGallery()`: loads both catalogs, renders every cake as a tile linking to `cake.html?id=<id>`, using `cakeThumbMarkup()` (from [/shared/utils.js](../../shared/utils.js)) — a real uploaded photo if set, else the placeholder. Runs on `DOMContentLoaded`.
 
 ## Data source
 

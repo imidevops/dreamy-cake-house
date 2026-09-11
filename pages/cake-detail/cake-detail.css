@@ -12,12 +12,11 @@
 .detail-thumb {
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8rem;
+  overflow: hidden;
   box-shadow: var(--shadow-md);
 }
+.detail-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.detail-thumb .thumb-placeholder { font-size: 8rem; }
 
 .detail-flavor { color: var(--color-accent); font-weight: 600; margin-bottom: var(--space-sm); }
 .detail-price { font-family: var(--font-heading); font-size: 2rem; color: var(--color-primary-dark); margin: var(--space-sm) 0; }
