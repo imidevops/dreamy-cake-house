@@ -3,70 +3,136 @@
     "id": "legacy-victoria-sponge",
     "name": "Classic Victoria Sponge",
     "category": "legacy",
-    "prices": { "1lb": 1200, "2lb": 2200, "3lb": 3200 },
+    "prices": {
+      "1lb": 1200,
+      "2lb": 2200,
+      "3lb": 3200
+    },
     "flavor": "Vanilla & Raspberry Jam",
     "description": "The timeless English tea-time favorite: two light vanilla sponge layers filled with raspberry jam and buttercream, finished with a dusting of sugar.",
-    "occasion": ["birthday", "afternoon-tea"],
+    "occasion": [
+      "birthday",
+      "afternoon-tea"
+    ],
     "featured": true
   },
   {
     "id": "legacy-red-velvet",
     "name": "Traditional Red Velvet",
     "category": "legacy",
-    "prices": { "1lb": 1500, "2lb": 2800, "3lb": 4000 },
+    "prices": {
+      "1lb": 1500,
+      "2lb": 2800,
+      "3lb": 4000
+    },
     "flavor": "Red Velvet & Cream Cheese",
     "description": "Deep cocoa-red layers with a tang of buttermilk, wrapped in silky cream cheese frosting — a Southern classic done the old-fashioned way.",
-    "occasion": ["birthday", "anniversary"],
+    "occasion": [
+      "birthday",
+      "anniversary"
+    ],
     "featured": true
   },
   {
     "id": "legacy-black-forest",
     "name": "Black Forest Gateau",
     "category": "legacy",
-    "prices": { "1lb": 1700, "2lb": 3200, "3lb": 4600 },
+    "prices": {
+      "1lb": 1700,
+      "2lb": 3200,
+      "3lb": 4600
+    },
     "flavor": "Chocolate, Cherry & Kirsch Cream",
     "description": "Rich chocolate sponge layered with whipped cream, morello cherries, and a whisper of kirsch, topped with chocolate shavings.",
-    "occasion": ["birthday", "anniversary", "wedding"],
+    "occasion": [
+      "birthday",
+      "anniversary",
+      "wedding"
+    ],
     "featured": false
   },
   {
     "id": "legacy-lemon-drizzle",
     "name": "Lemon Drizzle Loaf Cake",
     "category": "legacy",
-    "prices": { "1lb": 1000, "2lb": 1900, "3lb": 2700 },
+    "prices": {
+      "1lb": 1000,
+      "2lb": 1900,
+      "3lb": 2700
+    },
     "flavor": "Lemon",
     "description": "A moist lemon sponge soaked in a tart citrus syrup and topped with a crackly lemon glaze.",
-    "occasion": ["afternoon-tea"],
+    "occasion": [
+      "afternoon-tea"
+    ],
     "featured": false
   },
   {
     "id": "legacy-carrot-cake",
     "name": "Old-Fashioned Carrot Cake",
     "category": "legacy",
-    "prices": { "1lb": 1400, "2lb": 2600, "3lb": 3700 },
+    "prices": {
+      "1lb": 1400,
+      "2lb": 2600,
+      "3lb": 3700
+    },
     "flavor": "Carrot, Walnut & Cream Cheese",
     "description": "Spiced carrot cake studded with walnuts and finished with classic cream cheese frosting.",
-    "occasion": ["birthday", "afternoon-tea"],
+    "occasion": [
+      "birthday",
+      "afternoon-tea"
+    ],
     "featured": false
   },
   {
     "id": "legacy-fruit-cake",
     "name": "Traditional Fruit Cake",
     "category": "legacy",
-    "prices": { "1lb": 1900, "2lb": 3600, "3lb": 5200 },
+    "prices": {
+      "1lb": 1900,
+      "2lb": 3600,
+      "3lb": 5200
+    },
     "flavor": "Brandy-soaked Mixed Fruit",
     "description": "A dense, richly spiced fruit cake matured with brandy-soaked raisins, currants and candied peel — a wedding and Christmas heirloom recipe.",
-    "occasion": ["wedding", "christmas"],
+    "occasion": [
+      "wedding",
+      "christmas"
+    ],
     "featured": true
   },
   {
     "id": "legacy-coffee-walnut",
     "name": "Coffee & Walnut Cake",
     "category": "legacy",
-    "prices": { "1lb": 1300, "2lb": 2400, "3lb": 3500 },
+    "prices": {
+      "1lb": 1300,
+      "2lb": 2400,
+      "3lb": 3500
+    },
     "flavor": "Coffee & Walnut",
     "description": "Fluffy coffee-infused sponge layered with coffee buttercream and toasted walnuts.",
-    "occasion": ["afternoon-tea", "birthday"],
+    "occasion": [
+      "afternoon-tea",
+      "birthday"
+    ],
     "featured": false
+  },
+  {
+    "id": "legacy-test",
+    "category": "legacy",
+    "name": "test",
+    "flavor": "test",
+    "description": "test",
+    "occasion": [
+      "test"
+    ],
+    "featured": true,
+    "prices": {
+      "1lb": 1,
+      "2lb": 2,
+      "3lb": 3
+    },
+    "image": "assets/img/legacy/legacy-test.jpg"
   }
 ]
