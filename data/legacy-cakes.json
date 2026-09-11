@@ -134,5 +134,22 @@
       "3lb": 3
     },
     "image": "assets/img/legacy/legacy-test.jpg"
+  },
+  {
+    "id": "legacy-test-2",
+    "category": "legacy",
+    "name": "test",
+    "flavor": "test",
+    "description": "test",
+    "occasion": [
+      "test"
+    ],
+    "featured": true,
+    "prices": {
+      "1lb": 1,
+      "2lb": 2,
+      "3lb": 3
+    },
+    "image": "assets/img/legacy/legacy-test-2.jpg"
   }
 ]
