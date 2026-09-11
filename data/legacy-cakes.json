@@ -1,20 +1,21 @@
 [
   {
     "id": "legacy-victoria-sponge",
-    "name": "Classic Victoria Sponge",
+    "name": "test",
     "category": "legacy",
     "prices": {
       "1lb": 1200,
       "2lb": 2200,
       "3lb": 3200
     },
-    "flavor": "Vanilla & Raspberry Jam",
+    "flavor": "test",
     "description": "The timeless English tea-time favorite: two light vanilla sponge layers filled with raspberry jam and buttercream, finished with a dusting of sugar.",
     "occasion": [
       "birthday",
       "afternoon-tea"
     ],
-    "featured": true
+    "featured": true,
+    "image": "assets/img/legacy/legacy-victoria-sponge.jpg"
   },
   {
     "id": "legacy-red-velvet",
