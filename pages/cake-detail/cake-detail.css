@@ -24,6 +24,29 @@
 .detail-actions { display: flex; gap: var(--space-md); flex-wrap: wrap; margin-top: var(--space-lg); }
 .detail-badges { margin-bottom: var(--space-md); }
 
+.detail-tiers { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: var(--space-sm); }
+.tier-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 84px;
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+.tier-btn .tier-price { font-weight: 500; font-size: 0.82rem; color: var(--color-text-light); }
+.tier-btn:hover { border-color: var(--color-primary); }
+.tier-btn.active { border-color: var(--color-primary); background: var(--color-primary-light); }
+.tier-btn.active .tier-price { color: var(--color-primary-dark); }
+
 .back-link { display: inline-block; margin-bottom: var(--space-lg); font-weight: 500; }
 
 @media (max-width: 780px) {

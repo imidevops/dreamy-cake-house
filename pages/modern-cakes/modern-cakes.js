@@ -32,7 +32,7 @@ function modernCardHTML(cake) {
         <div class="cake-flavor">${escapeHTML(cake.flavor)}</div>
         <p class="cake-desc">${escapeHTML(cake.description)}</p>
         <div>${badges}</div>
-        <div class="cake-price">${formatPrice(cake.price, cake.currency)}</div>
+        <div class="cake-price">${formatPriceRange(cake.prices)}</div>
       </div>
     </a>
   `;

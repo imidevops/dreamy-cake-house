@@ -18,7 +18,7 @@ function legacyCardHTML(cake) {
         <h3>${escapeHTML(cake.name)}</h3>
         <div class="cake-flavor">${escapeHTML(cake.flavor)}</div>
         <p class="cake-desc">${escapeHTML(cake.description)}</p>
-        <div class="cake-price">${formatPrice(cake.price, cake.currency)}</div>
+        <div class="cake-price">${formatPriceRange(cake.prices)}</div>
       </div>
     </a>
   `;

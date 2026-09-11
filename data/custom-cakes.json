@@ -15,7 +15,7 @@
     "Funfetti", "Salted Caramel", "Matcha", "Coffee", "Other (describe below)"
   ],
   "budgetRanges": [
-    "Under $50", "$50 - $100", "$100 - $200", "$200 - $400", "$400+"
+    "Under Rs 3,000", "Rs 3,000 - Rs 6,000", "Rs 6,000 - Rs 12,000", "Rs 12,000 - Rs 25,000", "Rs 25,000+"
   ],
   "leadTimeDays": 7,
   "leadTimeNote": "Custom cakes need at least 7 days' notice; tiered/wedding cakes need 3+ weeks."

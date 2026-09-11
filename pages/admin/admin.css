@@ -1,0 +1,100 @@
+/* Admin panel — deliberately plain/utilitarian, not part of the public site
+   design. Not linked from shared/header.js's nav on purpose. */
+
+body { background: var(--color-bg-alt); }
+
+.admin-topbar {
+  background: var(--color-text);
+  color: #fff;
+  padding: var(--space-sm) 0;
+}
+.admin-topbar .container { display: flex; align-items: center; justify-content: space-between; }
+.admin-topbar h1 { color: #fff; font-size: 1.1rem; margin: 0; }
+.admin-topbar .who { font-size: 0.85rem; color: #cbb9ae; }
+
+.admin-wrap { max-width: 900px; margin: 0 auto; padding: var(--space-xl) var(--space-md); }
+
+/* ---- Login screen ---- */
+.login-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xl);
+  max-width: 520px;
+  margin: var(--space-2xl) auto;
+}
+.login-card h2 { margin-bottom: var(--space-sm); }
+.login-card ol { padding-left: 1.2rem; color: var(--color-text-light); font-size: 0.9rem; }
+.login-card ol li { margin-bottom: 0.3rem; }
+.login-card code { background: var(--color-bg-alt); padding: 0.1rem 0.4rem; border-radius: 4px; }
+
+/* ---- Dashboard ---- */
+.admin-tabs { display: flex; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+.admin-tab {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.admin-tab.active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+
+.admin-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); flex-wrap: wrap; gap: var(--space-sm); }
+
+.admin-cake-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+.admin-cake-row {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+.admin-cake-row .thumb {
+  width: 48px; height: 48px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
+}
+.admin-cake-row .info { flex: 1; min-width: 0; }
+.admin-cake-row .info h3 { font-size: 1rem; margin: 0; }
+.admin-cake-row .info .meta { font-size: 0.82rem; color: var(--color-text-light); }
+.admin-cake-row .row-actions { display: flex; gap: var(--space-sm); flex-shrink: 0; }
+.admin-cake-row .row-actions button {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.admin-cake-row .row-actions .delete-btn { color: var(--color-error); border-color: #f2cfc9; }
+
+/* ---- Cake form ---- */
+.admin-form-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  margin-top: var(--space-lg);
+}
+.tier-price-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+.checkbox-field { display: flex; align-items: center; gap: 0.5rem; }
+.checkbox-field input { width: auto; }
+.form-actions { display: flex; gap: var(--space-md); margin-top: var(--space-lg); }
+
+.admin-toast {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-md);
+  z-index: 200;
+  display: none;
+}
+.admin-toast.success { display: block; background: var(--color-success); }
+.admin-toast.error { display: block; background: var(--color-error); }

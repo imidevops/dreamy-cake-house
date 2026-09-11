@@ -6,7 +6,11 @@
  * - fetchJSON(path)        -> Promise<any>. Fetches and parses a JSON file
  *                             from /data. Throws a readable error on failure
  *                             (e.g. page opened as file:// without a server).
- * - formatPrice(amount)    -> "$45.00" style string.
+ * - formatPrice(amount)    -> "Rs 1,500" style string (PKR, no decimals).
+ * - formatPriceRange(prices) -> "From Rs 1,200" using the cheapest pound
+ *                             tier in a cake's `prices` object.
+ * - POUND_TIERS            -> the pound-tier keys/labels used across the
+ *                             site and the admin panel: 1lb, 2lb, 3lb.
  * - getQueryParam(name)    -> value of a URL query param, or null.
  * - qs(selector, root)     -> shorthand for root.querySelector.
  * - qsa(selector, root)    -> shorthand for [...root.querySelectorAll].
@@ -29,10 +33,23 @@ async function fetchJSON(path) {
   }
 }
 
-function formatPrice(amount, currency = 'USD') {
-  const symbols = { USD: '$', GBP: '£', EUR: '€' };
-  const symbol = symbols[currency] || '';
-  return `${symbol}${Number(amount).toFixed(2)}`;
+// Cakes are priced per pound, the standard way bakeries in Pakistan sell
+// cakes. Every cake's `prices` object uses these three tier keys.
+const POUND_TIERS = [
+  { key: '1lb', label: '1 lb' },
+  { key: '2lb', label: '2 lb' },
+  { key: '3lb', label: '3 lb' },
+];
+
+function formatPrice(amount) {
+  return `Rs ${Number(amount).toLocaleString('en-PK')}`;
+}
+
+/** Cheapest tier of a cake's `prices` object, e.g. "From Rs 1,200". */
+function formatPriceRange(prices) {
+  const values = Object.values(prices || {}).filter(v => typeof v === 'number');
+  if (!values.length) return '';
+  return `From ${formatPrice(Math.min(...values))}`;
 }
 
 function getQueryParam(name) {

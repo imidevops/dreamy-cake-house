@@ -6,8 +6,11 @@
  * Functions:
  * - findCakeById(id)  -> fetches both catalogs and returns the matching
  *   cake object, or null if not found.
- * - renderCake(cake)  -> fills in the detail template with the cake's data
- *   and builds a WhatsApp order link prefilled with its name and price.
+ * - renderCake(cake)  -> fills in the detail template with the cake's data,
+ *   renders the 1lb/2lb/3lb price tiers as selectable options, and builds a
+ *   WhatsApp order link prefilled with its name, chosen size, and price.
+ * - selectTier(cake, tierKey) -> marks a tier button active and updates the
+ *   displayed price + WhatsApp link to match the chosen size.
  * - renderNotFound()  -> shown when no id matches (bad link or deleted item).
  * - init()            -> reads ?id= from the URL and runs the above.
  *
@@ -26,6 +29,18 @@ async function findCakeById(id) {
   return [...legacy, ...modern].find(c => c.id === id) || null;
 }
 
+function selectTier(cake, tierKey) {
+  qsa('.tier-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.tier === tierKey));
+  const amount = cake.prices[tierKey];
+  qs('#detail-price').textContent = formatPrice(amount);
+
+  const tierLabel = POUND_TIERS.find(t => t.key === tierKey)?.label || tierKey;
+  const message = encodeURIComponent(
+    `Hi! I'd like to order the ${cake.name} (${tierLabel}, ${formatPrice(amount)}).`
+  );
+  qs('#order-cta').href = `https://wa.me/${ORDER_WHATSAPP_NUMBER}?text=${message}`;
+}
+
 function renderCake(cake) {
   const thumb = cakeThumbStyle(cake.id);
   qs('#detail-thumb').style.background = thumb.gradient;
@@ -33,7 +48,6 @@ function renderCake(cake) {
   qs('#detail-name').textContent = cake.name;
   qs('#detail-flavor').textContent = cake.flavor;
   qs('#detail-description').textContent = cake.description;
-  qs('#detail-price').textContent = formatPrice(cake.price, cake.currency);
   document.title = `${cake.name} | Dreamy Cake House`;
 
   const badges = qs('#detail-badges');
@@ -41,8 +55,18 @@ function renderCake(cake) {
     .map(o => `<span class="badge">${escapeHTML(o.replace(/-/g, ' '))}</span>`)
     .join('');
 
-  const message = encodeURIComponent(`Hi! I'd like to order the ${cake.name} (${formatPrice(cake.price, cake.currency)}).`);
-  qs('#order-cta').href = `https://wa.me/${ORDER_WHATSAPP_NUMBER}?text=${message}`;
+  const availableTiers = POUND_TIERS.filter(t => typeof cake.prices?.[t.key] === 'number');
+  const tiersEl = qs('#detail-tiers');
+  tiersEl.innerHTML = availableTiers.map((t, i) => `
+    <button type="button" class="tier-btn${i === 0 ? ' active' : ''}" data-tier="${t.key}">
+      ${t.label}<span class="tier-price">${formatPrice(cake.prices[t.key])}</span>
+    </button>
+  `).join('');
+  qsa('.tier-btn', tiersEl).forEach(btn => {
+    btn.addEventListener('click', () => selectTier(cake, btn.dataset.tier));
+  });
+
+  if (availableTiers.length) selectTier(cake, availableTiers[0].key);
 
   qs('#detail-content').hidden = false;
 }

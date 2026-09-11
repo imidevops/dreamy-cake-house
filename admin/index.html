@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Dreamy Cake House</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/variables.css">
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="../pages/admin/admin.css">
+</head>
+<body>
+
+  <div class="admin-topbar">
+    <div class="container">
+      <h1>Dreamy Cake House — Admin</h1>
+      <span class="who">Not part of the public site</span>
+    </div>
+  </div>
+
+  <div class="admin-wrap">
+
+    <!-- Login screen -->
+    <div id="login-screen">
+      <div class="login-card">
+        <h2>Owner Login</h2>
+        <p>This panel commits changes straight to the site's cake data on GitHub. Paste a GitHub Personal Access Token to continue — it's stored only in this browser and sent only to GitHub.</p>
+        <ol>
+          <li>Go to <code>github.com/settings/personal-access-tokens/new</code></li>
+          <li>Create a <strong>fine-grained token</strong> scoped to only the <code>dreamy-cake-house</code> repository</li>
+          <li>Under Repository permissions, set <strong>Contents: Read and write</strong></li>
+          <li>Generate it, copy it, and paste it below</li>
+        </ol>
+        <form id="login-form">
+          <div class="field">
+            <label for="token-input">GitHub Token</label>
+            <input type="password" id="token-input" placeholder="github_pat_..." autocomplete="off" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Connect</button>
+          <p class="form-status error" id="login-error" style="display:block;background:transparent;color:var(--color-error);padding:0;"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" hidden>
+      <div class="admin-toolbar">
+        <div class="admin-tabs">
+          <button type="button" class="admin-tab active" data-category="legacy">Legacy Cakes</button>
+          <button type="button" class="admin-tab" data-category="modern">Modern Cakes</button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-outline" id="logout-btn">Log Out</button>
+          <button type="button" class="btn btn-primary" id="add-cake-btn">+ Add New Cake</button>
+        </div>
+      </div>
+
+      <p id="admin-status-line" class="hint"></p>
+      <div class="admin-cake-list" id="cake-list"></div>
+
+      <div class="admin-form-card" id="cake-form-section" hidden>
+        <h2 id="form-title">Add New Cake</h2>
+        <form id="cake-form">
+          <div class="field-row">
+            <div class="field">
+              <label for="cake-name">Name</label>
+              <input type="text" id="cake-name" required placeholder="Classic Victoria Sponge">
+            </div>
+            <div class="field">
+              <label for="cake-flavor">Flavor</label>
+              <input type="text" id="cake-flavor" required placeholder="Vanilla & Raspberry Jam">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="cake-description">Description</label>
+            <textarea id="cake-description" rows="3" required placeholder="Short description shown on the catalog and detail pages."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="cake-occasions">Occasions</label>
+            <input type="text" id="cake-occasions" placeholder="birthday, anniversary, wedding">
+            <div class="hint">Comma-separated. Used for the Modern Cakes filter and detail-page badges.</div>
+          </div>
+
+          <div class="field">
+            <label>Price per Pound (PKR)</label>
+            <div class="tier-price-row">
+              <div>
+                <label for="price-1lb" class="hint">1 lb</label>
+                <input type="number" id="price-1lb" min="0" step="1" placeholder="1200">
+              </div>
+              <div>
+                <label for="price-2lb" class="hint">2 lb</label>
+                <input type="number" id="price-2lb" min="0" step="1" placeholder="2200">
+              </div>
+              <div>
+                <label for="price-3lb" class="hint">3 lb</label>
+                <input type="number" id="price-3lb" min="0" step="1" placeholder="3200">
+              </div>
+            </div>
+            <div class="hint">Leave a tier blank if that size isn't offered for this cake.</div>
+          </div>
+
+          <div class="field checkbox-field">
+            <input type="checkbox" id="cake-featured">
+            <label for="cake-featured" style="margin:0;">Feature on homepage</label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Cake</button>
+            <button type="button" class="btn btn-outline" id="cancel-form-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="admin-toast" id="admin-toast"></div>
+
+  <script src="../shared/utils.js"></script>
+  <script src="../pages/admin/admin.js"></script>
+</body>
+</html>
