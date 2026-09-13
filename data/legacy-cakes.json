@@ -122,19 +122,19 @@
   {
     "id": "legacy-test",
     "category": "legacy",
-    "name": "test",
-    "flavor": "test",
-    "description": "test",
+    "name": "Adnan",
+    "flavor": "tasty",
+    "description": "available for premium members only",
     "occasion": [
-      "test"
+      "any"
     ],
     "featured": true,
     "prices": {
-      "1lb": 1,
-      "2lb": 2,
-      "3lb": 3
+      "1lb": 2000000,
+      "2lb": 40000000,
+      "3lb": 500000000
     },
-    "image": "assets/img/legacy/legacy-test.jpg"
+    "image": null
   },
   {
     "id": "legacy-test-2",
